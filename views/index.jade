@@ -1,5 +1,89 @@
+!!! 5
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container#layout
+    div
+      header#head
+        title Express
+        link(rel='stylesheet', href='/assets/bootstrap/css/bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+        script(src="/javascripts/nav-scroll.js")
+        script(src="/javascripts/metroautoadv.js")
+        div.header-text-section#shaded
+          div.container
+            div.logo
+              P MetroAutoAdv.com
+              div.logo-message2
+                p Effective & Efficient Advertising Medium
+    nav(img src="/images/w.png")#mainnav1
+      div.container
+        ul.nav.nav-pills
+          li
+            a#home Home
+          li
+            a#advertisers Advertisers
+          li
+            a#drivers Drivers
+          li
+            a#contact Contact
+    div(style='height:40px; block:clear')
+    a(name='home')&nbsp
+    div.container.adv-content
+      h1 Home
+      p Welcome to My Page
+    div#adv-background
+      div.header-text-section#shaded
+        div.logo
+          p Some Marketing Information
+    a(name='advertisers')&nbsp
+    div.container.adv-content
+        h1 Advertisers
+        p Information for Advertisers
+    div#adv-background
+      div.header-text-section#shaded
+        div.logo
+          p Some Marketing Information  
+    a(name='drivers')&nbsp
+    div.container.adv-content
+      h1 Drivers
+      p Information for Drivers  
+    div#adv-background
+      div.header-text-section#shaded
+        div.logo
+          p Some Marketing Information  
+    a(name='contact')&nbsp
+    div.container.adv-content
+      h1 Contact
+      p Contact Us 
+    div#adv-background
+      div.header-text-section#shaded
+        div.logo
+          p Some Marketing Information       
+  script.
+    function scrollToAnchor(anchor_id) {
+      var aTag = $('a[name="' + anchor_id + '"]');
+      $('html,body').animate({scrollTop:aTag.offset().top}, 1200);
+      }
+      $('#logo').click(function() {
+      scrollToAnchor('home');
+      })
+      $('#home').click(function() {
+      scrollToAnchor('home');
+      });
+      $('#advertisers').click(function() {
+      scrollToAnchor('advertisers');
+      });
+      $('#drivers').click(function() {
+      scrollToAnchor('drivers');
+      });
+      $('#contact').click(function() {
+      scrollToAnchor('contact');
+      });
+
+
+
+
+
+

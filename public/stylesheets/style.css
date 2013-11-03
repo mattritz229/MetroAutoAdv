@@ -1,8 +1,107 @@
 body {
-  padding: 50px;
+  //padding-top: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  //background-image:url('../images/autoAd_Election.jpeg');
+  background-color: #C0D9D9;
+  margin: 0;
 }
 
 a {
   color: #00B7FF;
 }
+
+#layout {
+  margin: 0px;
+}
+
+.container {
+  max-width: 4000px;
+}
+
+#head {
+	//background-color: #ffffff;
+	//background-size: 420px;
+	background-image:url('../images/autoAd_Election.jpeg');
+	background-repeat: repeat;
+  position: relative;
+  background-attachment: fixed;
+	height: 400px;
+	margin-top: 0px;
+	color: #000000;
+  z-index: 0;
+}
+
+#shaded {
+  background-image:url('../images/Solid_whitew.png');
+  background-repeat:repeat;
+}
+
+.header-text-section {
+  position: absolute;
+  margin-top: 120px;
+  height: 155px;
+  width: 100%;
+  z-index: 1;
+}
+
+.logo {
+font-size: 60px;
+font-weight: 80px;
+color: #000000;
+}
+
+.logo-message2 {
+  font-size: 40px;
+}
+
+#mainnav1 {
+  background-color: #005377;
+  //background-image:url('../images/Solid_whitew.png');
+  background-repeat:repeat;
+  color: #ffffff;
+  //width: 780px;
+  //font-weight: 20px;
+  z-index:1;
+  top: 0px;
+}
+
+.nav {
+	position: ;
+    top: 100px;
+    width: 100%;
+}
+
+#mainnav1.affix {
+    position: static; 
+    top: 0px;
+    width: 100%;
+}
+
+.adv-content {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  font-size: 20px;
+  height: 300px;
+}
+
+#adv-background{
+  background-image:url('../images/autoAd_Election.jpeg');
+  background-repeat: repeat;
+  position: relative;
+  background-attachment: fixed;
+  height: 400px;
+  margin-top: 0px;
+  color: #000000;
+  z-index: 0;
+}
+
+/*#mainnav1 > .navbar-inner {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+}*/
+
+.stuck {position: fixed;}

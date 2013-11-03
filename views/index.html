@@ -1,0 +1,66 @@
+extends layout
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/assets/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a id="logo" class="brand">MyLogo</a>
+        <ul class="nav">
+          <li><a id="home">Home</a></li>
+          <li><a id="about">About</a></li>
+          <li><a id="contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <a name="home"></a>
+  <div style="height:40px; block:clear"></div>
+  <div style="height:600px">
+    <h1>Home</h1>
+    <p>Welcome to My Page</p>
+  </div>
+  <a name="about"></a>
+  <div style="height:40px; block:clear"></div>
+  <div style="height:600px">
+    <h1>About</h1>
+    <p>About Us</p>
+  </div>
+  <a name="contact"></a>
+  <div style="height:40px; block:clear"></div>
+  <div style="height:600px">
+    <h1>Contact</h1>
+    <p>Contact Us</p>
+  </div>
+</body>
+<script>
+function scrollToAnchor(anchor_id) {
+  var aTag = $('a[name="' + anchor_id + '"]');
+  $('html,body').animate({scrollTop:aTag.offset().top}, 'slow');
+}
+ 
+$('#logo').click(function() {
+  scrollToAnchor('home');
+})
+ 
+$('#home').click(function() { 
+  scrollToAnchor('home'); 
+});
+ 
+$('#about').click(function() { 
+  scrollToAnchor('about'); 
+});
+ 
+$('#contact').click(function() { 
+  scrollToAnchor('contact'); 
+});
+</script>
+</html>
