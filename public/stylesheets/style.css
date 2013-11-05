@@ -21,7 +21,7 @@ a {
 #head {
 	//background-color: #ffffff;
 	//background-size: 420px;
-	background-image:url('../images/autoAd_Election.jpeg');
+	background-image:url('../images/autoAd_Electionw13.png');
 	background-repeat: repeat;
   position: relative;
   background-attachment: fixed;
@@ -34,7 +34,21 @@ a {
 #shaded {
   background-image:url('../images/Solid_whitew.png');
   background-repeat:repeat;
+  height: 130px;
 }
+
+#shaded-home {
+  background-image:url('../images/Solid_whitew.png');
+  background-repeat:repeat;
+  height: 80px;
+}
+
+#shaded-advertisers {
+  background-image:url('../images/Solid_whitew.png');
+  background-repeat:repeat;
+  height: 80px;
+}
+
 
 .header-text-section {
   position: absolute;
@@ -84,8 +98,22 @@ color: #000000;
   height: 300px;
 }
 
+.adv-content-home {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  height: 200px;
+}
+
+.adv-content-advertisers {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  height: 200px;
+}
+
 #adv-background{
-  background-image:url('../images/autoAd_Election.jpeg');
+  background-image:url('../images/autoAd_Electionw13.png');
   background-repeat: repeat;
   position: relative;
   background-attachment: fixed;

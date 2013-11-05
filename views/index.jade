@@ -29,22 +29,25 @@ block content
           li
             a#contact Contact
     div(style='height:40px; block:clear')
+
     a(name='home')&nbsp
-    div.container.adv-content
+    div.container.adv-content-home 
       h1 Home
       p Welcome to My Page
     div#adv-background
-      div.header-text-section#shaded
+      div.header-text-section#shaded-home
         div.logo
           p Some Marketing Information
+
     a(name='advertisers')&nbsp
-    div.container.adv-content
+    div.container.adv-content-advertisers
         h1 Advertisers
         p Information for Advertisers
     div#adv-background
-      div.header-text-section#shaded
+      div.header-text-section#shaded-advertisers
         div.logo
-          p Some Marketing Information  
+          p Drive Home Your Message 
+
     a(name='drivers')&nbsp
     div.container.adv-content
       h1 Drivers
@@ -53,6 +56,7 @@ block content
       div.header-text-section#shaded
         div.logo
           p Some Marketing Information  
+
     a(name='contact')&nbsp
     div.container.adv-content
       h1 Contact
@@ -60,7 +64,8 @@ block content
     div#adv-background
       div.header-text-section#shaded
         div.logo
-          p Some Marketing Information       
+          p Some Contact Information   
+
   script.
     function scrollToAnchor(anchor_id) {
       var aTag = $('a[name="' + anchor_id + '"]');
