@@ -1,30 +1,76 @@
 $(document).ready(function(){
 
   // set up the parallax scrolling
-  $('.slide').each(function(){
-    var $bgobj = $(this); // assigning the object
+ // $('.slide').each(function(){
+  //  var $bgobj = $(this); // assigning the object
 
-    $(window).scroll(function() {
-      var yPos = -($(window).scrollTop() / $bgobj.data('speed')); 
+
+      var $window = $(window); 
+      var velocity = 0.1; 
+      var lastScrollTop = 0;
+    //$(window).scroll(function() {
+ 
+    function update(){
+
+      //Check what direction is being scrolled
+
+      $('.slide').each(function() { 
+
+        var pos = $window.scrollTop(); 
+        var $element = $(this); 
+        var offsetObjTop = $(this).offset().top;
+        var height = $element.height(); 
+        var offsetObjBottom = offsetObjTop + height;
+        //var topObj =  offsetObj.top;
+
+        var parent = $(this).offsetParent();
+        var offsetParTop = parent.offset().top;
+        var parentHeight = $(this).parent().height();
+        var offsetParBottom = offsetParTop + parentHeight;
+
+        //check if the object is in the view window plus a 5px buffer
+        if ((pos + $(window).height() - 10) > offsetObjTop  && (pos + 10 < offsetObjBottom)){
+          if (pos > lastScrollTop){
+              //downscroll code
+              if (offsetParBottom > offsetObjBottom){ 
+                $(this).css('margin-top','' + ((offsetObjTop - offsetParTop) + 3 )+ 'px');
+
+              }
+            } else {
+              // upscroll code
+              if (offsetParTop < offsetObjTop){ 
+                $(this).css('margin-top','' + ((offsetObjTop - offsetParTop) - 3) + 'px'); 
+              }
+            }
+            lastScrollTop = pos;
+        } 
+      });
+
+    };
+
+    $window.bind('scroll', update);
+
+
+      //var yPos = -($(window).scrollTop() / $bgobj.data('speed')); 
 
       // Put together our final background position
-      var coords = '50% '+ yPos + 'px';
+      //var coords = '50% '+ yPos + 'px';
 
       // Move the background
-      $bgobj.css({ backgroundPosition: coords });
-    }); 
-  });   
+      //$bgobj.css({ backgroundPosition: coords });
+    //}); 
+  //});   
 
   // set up the sticky menu
-  var aboveHeight = $('header').outerHeight();
+  // var aboveHeight = $('header').outerHeight();
 
-  $(window).scroll(function() { 
-    if ($(window).scrollTop() > aboveHeight){
-      $('nav').addClass('fixed').css('top','0').next().css('margin-top','40px');
-    } else {
-      $('nav').removeClass('fixed').next().css('margin-top','0');
-    }
-  });
+  // $(window).scroll(function() { 
+  //   if ($(window).scrollTop() > aboveHeight){
+  //     $('nav').addClass('fixed').css('top','0').next().css('margin-top','40px');
+  //   } else {
+  //     $('nav').removeClass('fixed').next().css('margin-top','0');
+  //   }
+  // });
 
   // set up navigation
   navScroll.setUpNavScroll();

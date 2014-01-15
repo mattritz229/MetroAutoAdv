@@ -6,15 +6,11 @@ block content
     div
       header#head
         title Express
-        link(rel='stylesheet', href='/assets/bootstrap/css/bootstrap.css')
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-        script(src="/javascripts/nav-scroll.js")
         script(src="/javascripts/metroautoadv.js")
         div.header-text-section#shaded
           div.container
             div.logo
-              P MetroAutoAdv.com
+              p MetroAutoAdv.com
               div.logo-message2
                 p Effective & Efficient Advertising Medium
     nav(img src="/images/w.png")#mainnav1
@@ -28,64 +24,52 @@ block content
             a#drivers Drivers
           li
             a#contact Contact
-    div(style='height:40px; block:clear')
+    //div(style='height:20px; block:clear')
 
-    a(name='home')&nbsp
+    a(name='home')
     div.container.adv-content-home 
-      h1 Home
-      p Welcome to My Page
-    div#adv-background
-      div.header-text-section#shaded-home
-        div.logo
-          p Some Marketing Information
+      h1 Mobile Advertising
+      p Mobile advertising has been highly effective for years on busses, trucks, and taxies. With excelent digital printing capabilities, graphics for vehicles are eye-catching and dramatic. Automobiles become moving billboards generating 2.5 times more attention than static billboards. Companies receive quality advertising from captive audiences for fractions of the cost of alternative advertising.   
 
-    a(name='advertisers')&nbsp
+      p<b> I use mobile advertising because:</b>
+      p * You can't zap it.
+      p * You can't ignore it.
+      p * It can't be turned off like television.
+      p * It reaches drivers and passengers no matter what radio stations they're listening to.
+      p * The large, colorful, innovative designs demand attention.
+      p * You have exclusivity in your space.
+
+    div#adv-background 
+      div.header-text-section#shaded-advertisers.slide
+        div.logo
+          p Drive Home Your Message
+    a(name='advertisers')
     div.container.adv-content-advertisers
         h1 Advertisers
-        p Information for Advertisers
-    div#adv-background
-      div.header-text-section#shaded-advertisers
-        div.logo
-          p Drive Home Your Message 
+        p Alternative out-of-home advertising is one of the fastest-growing media segments, expanding at double-digit rates.  
 
-    a(name='drivers')&nbsp
+    div#adv-background
+      div.header-text-section#shaded-drivers.slide
+        div.logo
+          p Earn money while commuting 
+    a(name='drivers')
     div.container.adv-content
       h1 Drivers
-      p Information for Drivers  
+      p Information for Drivers
+      div
+        button(type="button", onClick="window.location.href='/drivers'")#buttonDriver
+          | Driver Sign-up  
     div#adv-background
-      div.header-text-section#shaded
+      div.header-text-section#shaded-contact.slide
         div.logo
-          p Some Marketing Information  
-
-    a(name='contact')&nbsp
-    div.container.adv-content
+          p Contact Us  
+    a(name='contact')
+    div.container.adv-content-contact
       h1 Contact
       p Contact Us 
-    div#adv-background
-      div.header-text-section#shaded
-        div.logo
-          p Some Contact Information   
 
-  script.
-    function scrollToAnchor(anchor_id) {
-      var aTag = $('a[name="' + anchor_id + '"]');
-      $('html,body').animate({scrollTop:aTag.offset().top}, 1200);
-      }
-      $('#logo').click(function() {
-      scrollToAnchor('home');
-      })
-      $('#home').click(function() {
-      scrollToAnchor('home');
-      });
-      $('#advertisers').click(function() {
-      scrollToAnchor('advertisers');
-      });
-      $('#drivers').click(function() {
-      scrollToAnchor('drivers');
-      });
-      $('#contact').click(function() {
-      scrollToAnchor('contact');
-      });
+
+
 
 
 

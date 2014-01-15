@@ -1,0 +1,68 @@
+!!! 5
+extends layout
+
+block content
+  div.container#layout
+    div
+      header#head
+        title Express
+        script(src="/javascripts/metroautoadv.js")
+        link(rel='stylesheet', href='/stylesheets/drivers.css')
+        link("css/bootstrap.min.css" rel="stylesheet")
+        script(src="assets/bootstrap/js/bootstrap.min.js")
+        div.header-text-section#shaded
+          div.container
+            div.logo
+              P MetroAutoAdv.com
+              div.logo-message2
+                p Effective & Efficient Advertising Medium
+      nav(img src="/images/w.png")#mainnav1
+        div.container
+          ul.nav.nav-pills
+            li
+              a(href='/')#drivers Home
+    div.container.well#Street-label             
+      div.row-fluid
+        form(action="/pledge",method="post")
+          h1 Drivers Registration Form
+          row.col-md-10.col-sm-10
+            div.col-md-10.col-sm-10      
+              label Name
+          row.col-md-10.col-sm-10
+            div.col-md-5.col-sm-5
+              input(id="username", type="text", name="User", placeholder="first name").required.form-control
+            div.col-md-5.col-sm-5  
+              input(id="username", type="text", name="User", placeholder="last name").required.form-control
+          row.col-md-10.col-sm-10    
+            div.col-md-10.col-sm-10#Street-label
+              label Street Address
+            div.col-md-10.col-sm-10
+              input(type="text", name="streetAddr", alt="Street Addr", id='streetAddr-tf', placeholder='street address').required.form-control
+          row.col-md-10.col-sm-10  
+            div.col-md-8.col-sm-8#Street-label
+              label City / State / Zip
+            div.col-md-5.col-sm-5
+              input(type="text", name="city", alt="City", id='city-tf', placeholder='city').required.form-control
+            div.col-md-2.col-sm-2
+              select(type="text",name="state", alt="State", id='state-tf', placeholder='state').required.form-control
+            div.col-md-3.col-sm-3
+              input(type="text", name="zip", alt="Zip", id='zip-tf', placeholder='zip').required.form-control
+          row.col-md-10.col-sm-10       
+            div.col-md-8.col-sm-8#Street-label                   
+              label Email Address / Phone Number
+            div.col-md-5.col-sm-5 
+              input(type="text", name="email", alt="Email Address", id='email-tf', placeholder='email').required.form-control
+            div.col-md-5.col-sm-5  
+              input(type="text", name="phoneNbr", alt="Phone Number", id='phoneNbr-tf', placeholder='phone number').required.form-control
+          row.col-md-10.col-sm-10
+            div#Submit
+              button(type="submit")#btn-login-bikes.btn.btn-primary
+               | Submit
+            //div
+              <div id="error" class="hidden"></div>
+              <div id="success" class="hidden">Thanks for signing up at Browserling!</      
+                    
+
+
+
+
