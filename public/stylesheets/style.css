@@ -20,7 +20,9 @@ a {
 }
 
 .container {
-  max-width: 4000px;
+  max-width: 4030px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 #head {
