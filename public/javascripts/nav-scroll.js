@@ -1,4 +1,4 @@
-;(function ( $, window, document, undefined ) {
+//;(function ( $ ) {
   $.widget( "uix.navScroll", {
 
       //Options to be used as defaults
@@ -8,13 +8,11 @@
       },
 
     _create: function() {
-
       myWidget = this;
       animateSpeed = myWidget.options.animateSpeed;
       showHeaderPortion = myWidget.options.showHeaderPortion;
       aboveHeight = $('header').outerHeight();
       menuSize = mainnav1.offsetHeight;
-
     },
 
     scrollToAnchor: function (anchor_id) {
@@ -49,6 +47,6 @@
     },
 
   });
-})( jQuery, window, document );
+//})( jQuery);
   
   
