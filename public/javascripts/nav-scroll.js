@@ -1,4 +1,4 @@
-//;(function ( $ ) {
+;(function ( $ ) {
   $.widget( "uix.navScroll", {
 
       //Options to be used as defaults
@@ -47,6 +47,6 @@
     },
 
   });
-//})( jQuery);
+})( jQuery);
   
   
