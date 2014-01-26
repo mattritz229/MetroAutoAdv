@@ -51,29 +51,25 @@ $(document).ready(function(){
     $window.bind('scroll', update);
 
 
-      //var yPos = -($(window).scrollTop() / $bgobj.data('speed')); 
+    $('#head').navScroll();
+    $('#head').navScroll("setUpNavScroll");
 
-      // Put together our final background position
-      //var coords = '50% '+ yPos + 'px';
+    $('#home').click(function() { 
+      $('#head').navScroll("navigateHome");
+    });
 
-      // Move the background
-      //$bgobj.css({ backgroundPosition: coords });
-    //}); 
-  //});   
+    $('#drivers').click(function() { 
+      $('#head').navScroll("scrollToAnchor",'drivers');
+    });
 
-  // set up the sticky menu
-  // var aboveHeight = $('header').outerHeight();
+    $('#advertisers').click(function() { 
+      $('#head').navScroll("scrollToAnchor",'advertisers');
+    });
 
-  // $(window).scroll(function() { 
-  //   if ($(window).scrollTop() > aboveHeight){
-  //     $('nav').addClass('fixed').css('top','0').next().css('margin-top','40px');
-  //   } else {
-  //     $('nav').removeClass('fixed').next().css('margin-top','0');
-  //   }
-  // });
+    $('#contact').click(function() { 
+      $('#head').navScroll("scrollToAnchor",'contact');
+    });
 
-  // set up navigation
-  navScroll.setUpNavScroll();
 
 
   // set up submit button for service area

@@ -1,67 +1,54 @@
+;(function ( $, window, document, undefined ) {
+  $.widget( "uix.navScroll", {
 
-//Give name to anonymous function
-var navScroll = navScrolling();
+      //Options to be used as defaults
+      options: {
+          animateSpeed: 1200,
+          showHeaderPortion: 350  //offsetFromTag to show the header pic
+      },
 
-function navScrolling(){
-  var scrollToAnchor = function(anchor_id) {
-    var aTag = $('a[name="' + anchor_id + '"]');
-    var aboveHeight = $('header').outerHeight();
-    aboveHeight = aboveHeight + 20; //top padding
-    animateMenu(aboveHeight);
+    _create: function() {
 
-    function animateMenu(aboveHeight) {
-      if ($(window).scrollTop() > aboveHeight){
-        var aMenuSize = mainnav1.offsetHeight;     
+      myWidget = this;
+      animateSpeed = myWidget.options.animateSpeed;
+      showHeaderPortion = myWidget.options.showHeaderPortion;
+      aboveHeight = $('header').outerHeight();
+      menuSize = mainnav1.offsetHeight;
+
+    },
+
+    scrollToAnchor: function (anchor_id) {
+      aTag = $('a[name="' + anchor_id + '"]');
+      var aMenuSize = null
+      if ($(window).scrollTop() > aboveHeight){ 
+        aMenuSize = menuSize;    //Menu is at top of page
       } else {
-        var aMenuSize = 0;
+        aMenuSize = 0;
       }
-      $('html,body').animate({scrollTop:aTag.offset().top - 350 + aMenuSize}, 1200);
-    };
-  };
+      $('html,body').animate({scrollTop:aTag.offset().top - showHeaderPortion + aMenuSize}, animateSpeed); 
+    },
 
-  return {
-    setUpNavScroll: function() {
-      // navigation scrolling functionality
-      $('#home').click(function() { 
-        $('html,body').animate({scrollTop:0}, 1200);
-      });
-      $('#drivers').click(function() { 
-        scrollToAnchor('drivers'); 
-      });
-      $('#advertisers').click(function() {
-        scrollToAnchor('advertisers');
-      });
-      $('#contact').click(function() {
-        scrollToAnchor('contact');
-      });
+    navigateHome: function() {
+      $('html,body').animate({scrollTop:0}, animateSpeed);
+    },
 
-      // navigation sticky menu bar
-      var aboveHeight = $('header').outerHeight();
-      aboveHeight = aboveHeight + 20; //top padding
-
+    setUpNavScroll: function() {      // navigation sticky menu bar
       $(window).scroll(function() { 
-        if ($(window).scrollTop() > aboveHeight){
-          $('nav').addClass('navbar-fixed-top').css('top','0').next().css('margin-top','40px');
+        if ($(window).scrollTop() > (aboveHeight)){
+          $('nav').addClass('navbar-fixed-top').css('top','0').next().css('margin-top',menuSize);
         } else {
           $('nav').removeClass('navbar-fixed-top').next().css('margin-top','0');
         }
-      });
-/*
-      initialize: function() {
-        _.bindAll(this, 'manageNavbarFixedTopClass');
-        $(window).scroll(this.manageNavbarFixedTopClass(aboveHeight)); 
-      }
+      });  
+    },
 
+    // Destroy an instantiated plugin and clean up
+    // modifications the widget has made to the DOM
+    destroy: function () {
+      $.Widget.prototype.destroy.call(this);
+    },
 
-      function manageNavbarFixedTopClass(aboveHeight) {
-        var windowScrollTop = $(window).scrollTop();
-        if (windowScrollTop > aboveHeight){
-          $('nav').addClass('navbar-fixed-top').css('top','0').next().css('margin-top','40px');
-        } else {
-          $('nav').removeClass('navbar-fixed-top').next().css('margin-top','0');
-        }
-      };
-  */    
-    }
-  };
-};
+  });
+})( jQuery, window, document );
+  
+  
